@@ -1,0 +1,299 @@
+.panel {
+  padding: 0 3rem;
+
+  @include bp(mob) {
+    padding: 0 6rem;
+  }
+
+  @include bp(wide) {
+    padding: 0 12rem;
+  }
+
+  &__container {
+    max-width: 144rem;
+    padding: 4rem 0;
+    margin: 0 auto;
+
+    @include bp(lap) {
+      padding: 8rem 0;
+    }
+
+    @include bp(desk) {
+      padding: 10rem 0;
+    }
+
+    > h2 {
+      color: getcolor('black');
+      margin: 0 0 3rem;
+    }
+  }
+
+  &--white {
+    background-color: getcolor('white');
+  }
+
+  &--page-content {
+    .panel {
+      &__container {
+        @include bp(desk) {
+          padding: 7rem 0 10rem;
+        }
+      }
+    }
+  }
+
+  &--post-content {
+    .panel {
+      &__container {
+        padding: 0 0 4rem;
+
+        @include bp(desk) {
+          max-width: 82rem;
+          padding: 0 0 12rem;
+        }
+      }
+    }
+  }
+
+  &--decorator-who-we-are {
+    .panel {
+      &__container {
+        padding-top: 0;
+
+        @include bp(desk) {
+          padding: 0 0 12rem;
+        }
+      }
+    }
+  }
+
+  &--decorator-careers {
+    .panel {
+      &__container {
+        padding: 0;
+
+        @include bp(desk) {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &--who-we-are {
+    background-color: getcolor('white');
+    padding: 4rem 0 0;
+
+    @include bp(mob) {
+      padding: 8rem 0 0;
+    }
+
+    @include bp(wide) {
+      padding: 10rem 0 0;
+    }
+
+    .panel {
+      &__wrapper {
+        background: linear-gradient(
+          to right,
+          getcolor('wheat-flour') 0%,
+          getcolor('wheat-flour') 50%,
+          getcolor('white') 50%,
+          getcolor('white') 100%
+        );
+        padding: 0 3rem;
+
+        @include bp(mob) {
+          padding: 0 6rem;
+        }
+
+        @include bp(wide) {
+          padding: 0 12rem;
+        }
+      }
+
+      &__container {
+        padding: 0;
+        margin-right: -1.5rem;
+
+        @include bp(mob) {
+          padding: 0 6rem 0 0;
+          margin: 0 auto;
+        }
+
+        @include bp(desk) {
+          padding: 0 12rem 0 0;
+        }
+      }
+    }
+  }
+
+  &--what-we-do-approach {
+    .panel {
+      &__container {
+        @include bp(desk) {
+          padding: 6rem 0;
+        }
+      }
+    }
+  }
+
+  &--what-we-do-how {
+    .panel {
+      &__container {
+        @include bp(desk) {
+          padding: 6rem 0 12rem;
+        }
+      }
+    }
+  }
+
+  &--what-we-do-quote {
+    background-color: getcolor('white');
+
+    .panel {
+      &__container {
+        border-bottom: 0.1rem solid getcolor('ui-grey');
+
+        @include bp(desk) {
+          padding: 16rem 0;
+        }
+      }
+    }
+  }
+
+  &--what-we-do-featured-work {
+    background-color: getcolor('white');
+
+    .panel {
+      &__container {
+        @include bp(desk) {
+          padding: 12rem 0 6rem;
+        }
+      }
+    }
+  }
+
+  &--work-search {
+    .panel {
+      &__container {
+        @include bp(desk) {
+          padding: 6rem 0 10rem;
+        }
+      }
+    }
+  }
+
+  &--podcast-content {
+    .panel {
+      &__container {
+        padding: 4rem 0 8rem;
+
+        @include bp(desk) {
+          padding: 7rem 0 8rem;
+        }
+      }
+    }
+  }
+
+  &--featured-podcast {
+    .panel {
+      &__container {
+        padding: 0;
+
+        @include bp(desk) {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &--podcast {
+    .panel {
+      &__container {
+        padding: 7rem 0 4rem;
+
+        @include bp(desk) {
+          padding: 7rem 0 4rem;
+        }
+      }
+    }
+  }
+
+  &--panel-shapes {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 50%,
+      getcolor('white') 50%,
+      getcolor('white') 100%
+    );
+
+    .panel {
+      &__container {
+        padding: 6rem 0;
+
+        @include bp(mob) {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &--decorator-podcast-hero {
+    .panel {
+      &__container {
+        padding: 4rem 0 0;
+
+        @include bp(desk) {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &--wordpress-featured-work {
+    .panel {
+      &__container {
+        @include bp(desk) {
+          padding: 10rem 0 0;
+        }
+      }
+    }
+  }
+
+  &--wordpress-faq {
+    background-color: getcolor('white');
+
+    .panel {
+      &__container {
+        padding-top: 0;
+
+        @include bp(desk) {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+
+  &--acs-how {
+    .panel {
+      &__container {
+        @include bp(desk) {
+          padding: 10rem 0;
+        }
+      }
+    }
+  }
+
+  &--home-acs-cta {
+    background-color: getcolor('green');
+
+    .panel {
+      &__container {
+        @include bp(desk) {
+          padding: 10rem 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+/* stylelint-disable selector-class-pattern */
+.gform_submission_error {
+  color: getcolor('peach-tea');
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 300;
+}
+
+.gform_heading {
+  margin-bottom: 5rem;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.gform_required_legend {
+  font-size: 1.8rem;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.gfield_required {
+  color: getcolor('peach-tea');
+}
+
+.gform_fields {
+  margin: 0 -1rem 2rem;
+
+  @include bp(lap) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.gfield {
+  flex-basis: 100%;
+  flex-grow: 1;
+  margin: 0 1rem 3rem;
+
+  @include bp(lap) {
+    min-width: 23rem;
+  }
+
+  &--width-half {
+    flex-basis: calc(50% - 2rem);
+  }
+
+  &--type-honeypot {
+    display: none;
+  }
+
+  &--type-html {
+    font-weight: 300;
+
+    a {
+      color: getcolor('black');
+      text-decoration: underline;
+    }
+  }
+
+  .gfield_label {
+    display: block;
+    color: getcolor('black');
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+
+  .ginput_container {
+    input,
+    textarea {
+      background-color: getcolor('wheat-flour');
+      color: getcolor('black');
+      display: block;
+      width: 100%;
+      padding: 2rem;
+      border: 0.1rem solid getcolor('ui-grey');
+      border-radius: 0.5rem;
+
+      &:focus-visible {
+        outline: 0.2rem solid getcolor('black');
+      }
+
+      &::placeholder {
+        color: getcolor('slate');
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &.gfield_error {
+    .ginput_container {
+      input,
+      textarea {
+        border-width: 0.2rem;
+        border-color: getcolor('peach-tea');
+      }
+    }
+  }
+
+  .validation_message {
+    color: getcolor('peach-tea');
+    margin-top: 0.5rem;
+  }
+}
+
+.gform_confirmation_message {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 2rem 0;
+}

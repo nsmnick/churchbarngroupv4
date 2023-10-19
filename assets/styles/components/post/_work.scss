@@ -1,0 +1,345 @@
+.work-featured-image {
+  background: linear-gradient(
+    to bottom,
+    getcolor('white') 0%,
+    getcolor('white') 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  display: grid;
+  grid-template-columns: minmax(3rem, 1fr) minmax(auto, 144rem) minmax(
+      3rem,
+      1fr
+    );
+  grid-template-rows: 1fr;
+  grid-gap: 0;
+
+  @include bp(mob) {
+    grid-template-columns: minmax(6rem, 1fr) minmax(auto, 144rem) minmax(
+        6rem,
+        1fr
+      );
+  }
+
+  @include bp(wide) {
+    grid-template-columns: minmax(12rem, 1fr) minmax(auto, 144rem) minmax(
+        12rem,
+        1fr
+      );
+  }
+
+  &__container {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  &__image {
+    aspect-ratio: 2.22;
+    width: 100%;
+    max-height: 70rem;
+    background-image: getcolor('slate');
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+
+      @include bp(lap) {
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+      }
+    }
+  }
+}
+
+.work-panels {
+  .panel {
+    background-color: getcolor('white');
+
+    &:first-child {
+      .panel {
+        &__container {
+          @include bp(lap) {
+            padding-top: 10rem;
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      .panel {
+        &__container {
+          @include bp(lap) {
+            padding-bottom: 10rem;
+          }
+        }
+      }
+    }
+
+    &__container {
+      @include bp(lap) {
+        padding: 6rem 0;
+      }
+    }
+  }
+}
+
+.work-content {
+  @extend .post-content;
+
+  h3 {
+    line-height: 1.3;
+
+    @include bp(desk) {
+      font-size: 4rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__content {
+    @include bp(desk) {
+      font-size: 2rem;
+      columns: 2;
+      gap: 12rem;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul.no-list-style {
+    list-style: none;
+    padding: 0;
+  }
+
+  .external-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 400;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 1.6rem;
+      height: 1.7rem;
+      background-color: getcolor('peach-tea');
+      mask: url('../images/icons/icon-square-arrow-up-right.svg') no-repeat
+        center;
+      mask-size: contain;
+      margin-right: 1rem;
+      transition: background-color 0.2s linear;
+    }
+
+    &:hover {
+      &::before {
+        background-color: getcolor('mint');
+      }
+    }
+  }
+}
+
+.work-image {
+  aspect-ratio: 1.92;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  @include bp(lap) {
+    border-radius: 2rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.work-video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  @include bp(lap) {
+    border-radius: 2rem;
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/*
+node_modules/swiper/swiper-bundle.css
+*/
+.work-image-slider {
+  position: relative;
+
+  &__slides-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+  }
+
+  &__slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    transition-timing-function: var(
+      --swiper-wrapper-transition-timing-function,
+      initial
+    );
+    box-sizing: content-box;
+  }
+
+  &__slide {
+    flex-shrink: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+
+    &__image {
+      aspect-ratio: 1.92;
+      width: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+
+      @include bp(lap) {
+        border-radius: 2rem;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    width: 5rem;
+    background-color: getcolor('white');
+    border-radius: 50%;
+    box-shadow: 0 0 2rem rgb(getcolorrgb('black') / 10%);
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+    user-select: none;
+    cursor: pointer;
+
+    @include bp(desk) {
+      width: 8rem;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 2.1rem;
+      height: 1.3rem;
+      background-color: getcolor('slate');
+      mask: url('../images/icons/icon-pagination-arrow.svg') no-repeat center;
+      mask-size: contain;
+    }
+
+    &--prev {
+      left: -2.5rem;
+
+      @include bp(desk) {
+        left: -4rem;
+      }
+
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--next {
+      right: -2.5rem;
+
+      @include bp(desk) {
+        right: -4rem;
+      }
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    @include bp(desk) {
+      bottom: 3rem;
+    }
+
+    &__bullet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.8rem;
+      height: 1.8rem;
+      background-color: rgb(getcolorrgb('wheat-flour') / 50%);
+      border-radius: 50%;
+      user-select: none;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        background-color: transparent;
+        border-radius: 50%;
+        transition: background-color 0.3s linear;
+      }
+
+      &--active {
+        &::before {
+          background-color: getcolor('slate');
+        }
+      }
+    }
+  }
+}
+
+.work-footer-image {
+  aspect-ratio: 2;
+  width: 100%;
+  max-height: 85rem;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,56 @@
+$color-white: #fff;
+$color-black: #000;
+$color-ui-grey: #eaeaea;
+$color-wheat-flour: #f8f7f7;
+$color-slate: #515b63;
+$color-duck: #aabbc8;
+$color-mint: #abd4cc;
+$color-peach-tea: #e4a283;
+$color-green: #ebefe4;
+$color-spotify: #1db954;
+
+@include setvars(
+  (
+    'white': $color-white,
+    'black': $color-black,
+    'ui-grey': $color-ui-grey,
+    'wheat-flour': $color-wheat-flour,
+    'slate': $color-slate,
+    'duck': $color-duck,
+    'mint': $color-mint,
+    'peach-tea': $color-peach-tea,
+    'green': $color-green,
+    'spotify': $color-spotify,
+  ),
+  'color'
+);
+
+/*
+RGB values.
+*/
+$color-rgb-white: getrgb($color-white);
+$color-rgb-black: getrgb($color-black);
+$color-rgb-ui-grey: getrgb($color-ui-grey);
+$color-rgb-wheat-flour: getrgb($color-wheat-flour);
+$color-rgb-slate: getrgb($color-slate);
+$color-rgb-duck: getrgb($color-duck);
+$color-rgb-mint: getrgb($color-mint);
+$color-rgb-peach-tea: getrgb($color-peach-tea);
+$color-rgb-green: getrgb($color-green);
+$color-rgb-spotify: getrgb($color-spotify);
+
+@include setvars(
+  (
+    'white': $color-rgb-white,
+    'black': $color-rgb-black,
+    'ui-grey': $color-rgb-ui-grey,
+    'wheat-flour': $color-rgb-wheat-flour,
+    'slate': $color-rgb-slate,
+    'duck': $color-rgb-duck,
+    'mint': $color-rgb-mint,
+    'peach-tea': $color-rgb-peach-tea,
+    'green': $color-rgb-green,
+    'spotify': $color-rgb-spotify,
+  ),
+  'color-rgb'
+);

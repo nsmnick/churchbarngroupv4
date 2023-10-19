@@ -1,0 +1,18 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:vue/strongly-recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "camelcase": ["error", { "properties": "always" }],
+    "vue/no-v-for-template-key": 0
+  }
+}

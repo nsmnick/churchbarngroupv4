@@ -1,0 +1,54 @@
+.share-role {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  border-bottom: 0.1rem solid rgb(getcolorrgb('duck') / 20%);
+  padding: 4rem 0;
+  margin: 0 0 3rem;
+
+  @include bp(lap) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include bp(desk) {
+    padding: 4rem 2rem;
+    margin: 0 -2rem 3rem;
+  }
+
+  &__back {
+    color: getcolor('black');
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    @include bp(lap) {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+}
+
+.job-content {
+  @extend .post-content;
+
+  h3 {
+    font-weight: 200;
+  }
+
+  margin-bottom: 6rem;
+
+  hr {
+    @include bp(desk) {
+      margin: 3rem -2rem;
+    }
+  }
+}

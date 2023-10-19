@@ -1,0 +1,826 @@
+.decorator-home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+  position: relative;
+  aspect-ratio: 1440 / 870;
+
+  @include bp(mob) {
+    display: block;
+  }
+
+  @include bp(lap) {
+    margin-top: -4.5rem;
+  }
+
+  &__main-image,
+  &__secondary-image {
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__main-image {
+    order: 2;
+    display: block;
+    aspect-ratio: 1.92;
+    width: 100%;
+    border-radius: 2.08% / 4%;
+    border-bottom-left-radius: 15.625% 30%;
+    overflow: hidden;
+    position: relative;
+
+    @include bp(mob) {
+      width: 66.66%;
+      position: absolute;
+      bottom: 15.86%;
+      left: 0;
+    }
+
+    iframe {
+      display: block;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      border: 0;
+    }
+
+    @include anim-fade-in;
+  }
+
+  &__secondary-image {
+    display: none;
+    aspect-ratio: 0.75;
+    width: 31.25%;
+    border-radius: 4.44% / 3.33%;
+    border-top-left-radius: 50% 37.5%;
+    border-top-right-radius: 50% 37.5%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include anim-fade-in;
+
+    @include bp(mob) {
+      display: block;
+    }
+  }
+
+  &__semi-circle {
+    order: 1;
+    background-color: getcolor('mint');
+    mask: url('../images/decorators/decorator-semi-circle-solid.svg') center
+      no-repeat;
+    mask-size: contain;
+    aspect-ratio: 26 / 11;
+    width: 45%;
+
+    @include anim-fade-left;
+
+    @include bp(mob) {
+      width: 18.06%;
+      position: absolute;
+      top: 10.57%;
+      left: 48.61%;
+    }
+  }
+
+  &__circle {
+    display: none;
+    background-color: getcolor('peach-tea');
+    aspect-ratio: 1;
+    width: 16.67%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 14.58%;
+
+    @include anim-fade-right;
+
+    @include bp(mob) {
+      display: block;
+    }
+  }
+}
+
+.decorator-hero {
+  position: relative;
+
+  &__container {
+    aspect-ratio: 384 / 243;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__semi-circle-line {
+    background-color: getcolor('slate');
+    mask: url('../images/decorators/decorator-semi-circle-line.svg') center
+      bottom no-repeat;
+    mask-size: contain;
+    aspect-ratio: 150 / 67;
+    width: 39.06%;
+    position: absolute;
+    top: 9.71%;
+    left: 6.4%;
+    transform: translateY(0) rotate(-35.62deg);
+
+    @include anim-down-rotate(
+      $duration: 1s,
+      $delay: 0s,
+      $distance: 2rem,
+      $timing: ease-out,
+      $rotate: -60deg
+    );
+  }
+
+  &__semi-circle {
+    background-color: getcolor('peach-tea');
+    mask: url('../images/decorators/decorator-semi-circle-solid.svg') center
+      no-repeat;
+    mask-size: contain;
+    aspect-ratio: 173 / 75;
+    width: 45%;
+    position: absolute;
+    top: 63.05%;
+    left: 0;
+    transform: translateX(0) rotate(-135deg);
+
+    @include anim-right-rotate(
+      $duration: 1s,
+      $delay: 0s,
+      $distance: 2rem,
+      $timing: ease-out,
+      $rotate: -180deg
+    );
+  }
+
+  &__circle {
+    background-color: getcolor('mint');
+    aspect-ratio: 1;
+    width: 63.28%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @include anim-fade-right;
+  }
+}
+
+.decorator-hero-alt {
+  position: relative;
+
+  &__container {
+    aspect-ratio: 307 / 239;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__semi-circle-line {
+    background-color: getcolor('slate');
+    mask: url('../images/decorators/decorator-semi-circle-line.svg') center
+      bottom no-repeat;
+    mask-size: contain;
+    aspect-ratio: 150 / 67;
+    width: 63.52%;
+    position: absolute;
+    top: 5.56%;
+    right: 3.62%;
+    transform: translateY(0) rotate(30deg);
+
+    @include anim-left-rotate(
+      $duration: 1s,
+      $delay: 0s,
+      $distance: 2rem,
+      $timing: ease-out,
+      $rotate: 60deg
+    );
+  }
+
+  &__semi-circle {
+    background-color: getcolor('mint');
+    mask: url('../images/decorators/decorator-semi-circle-solid.svg') center
+      no-repeat;
+    mask-size: contain;
+    aspect-ratio: 173 / 75;
+    width: 97.72%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @include anim-fade-in;
+  }
+
+  &__circle {
+    background-color: getcolor('peach-tea');
+    aspect-ratio: 1;
+    width: 39.09%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include anim-fade-left;
+  }
+}
+
+.decorator-home-wwa {
+  position: relative;
+  aspect-ratio: 300 / 345;
+
+  @include bp(mob) {
+    aspect-ratio: 1440 / 860;
+  }
+
+  &__image-one,
+  &__image-two,
+  &__image-three {
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image-one {
+    aspect-ratio: 1;
+    width: 50%;
+    border-radius: 6.06%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include anim-fade-down;
+
+    @include bp(mob) {
+      width: 22.9%;
+      left: 33.33%;
+    }
+  }
+
+  &__image-two {
+    aspect-ratio: 1.67;
+    width: 100%;
+    border-radius: 2.08% / 4%;
+    border-bottom-right-radius: 15.625% 30%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @include anim-fade-in;
+
+    @include bp(mob) {
+      aspect-ratio: 1.92;
+      width: 66.66%;
+      top: 41.86%;
+      bottom: unset;
+      left: 33.33%;
+    }
+  }
+
+  &__image-three {
+    display: none;
+    aspect-ratio: 0.75;
+    width: 31.25%;
+    border-radius: 4.44% / 3.33%;
+    border-top-left-radius: 50% 37.5%;
+    border-top-right-radius: 50% 37.5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include anim-fade-in;
+
+    @include bp(mob) {
+      display: block;
+    }
+  }
+
+  &__semi-circle {
+    aspect-ratio: 2.32;
+    width: 45%;
+    background-color: getcolor('peach-tea');
+    mask: url('../images/decorators/decorator-semi-circle-solid.svg') center
+      no-repeat;
+    mask-size: contain;
+    position: absolute;
+    top: 26.96%;
+    right: 0;
+
+    @include anim-fade-right;
+
+    @include bp(mob) {
+      width: 16.12%;
+      top: 26.74%;
+      left: 58.33%;
+      right: unset;
+    }
+  }
+
+  &__circle {
+    display: none;
+    background-color: getcolor('duck');
+    aspect-ratio: 1;
+    width: 15.97%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 15.28%;
+
+    @include anim-fade-left;
+
+    @include bp(mob) {
+      display: block;
+    }
+  }
+}
+
+.decorator-who-we-are {
+  position: relative;
+  aspect-ratio: 300 / 345;
+
+  @include bp(mob) {
+    aspect-ratio: 1440 / 860;
+  }
+
+  &__image-one,
+  &__image-two,
+  &__image-three {
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image-one {
+    aspect-ratio: 1.67;
+    width: 100%;
+    border-radius: 2.08% / 4%;
+    border-top-left-radius: 15.625% 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include anim-fade-in;
+
+    @include bp(mob) {
+      aspect-ratio: 1.92;
+      width: 66.66%;
+    }
+  }
+
+  &__image-two {
+    aspect-ratio: 1;
+    width: 50%;
+    border-radius: 6.06%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @include anim-fade-up;
+
+    @include bp(mob) {
+      width: 22.9%;
+      right: 33.33%;
+    }
+  }
+
+  &__image-three {
+    display: none;
+    aspect-ratio: 0.75;
+    width: 31.25%;
+    border-radius: 4.44% / 3.33%;
+    border-top-left-radius: 50% 37.5%;
+    border-top-right-radius: 50% 37.5%;
+    position: absolute;
+    top: 21.4%;
+    right: 0;
+
+    @include anim-fade-in;
+
+    @include bp(mob) {
+      display: block;
+    }
+  }
+
+  &__semi-circle {
+    aspect-ratio: 2.32;
+    width: 45%;
+    position: absolute;
+    bottom: 26.96%;
+    left: 0;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: getcolor('peach-tea');
+      mask: url('../images/decorators/decorator-semi-circle-solid.svg') center
+        no-repeat;
+      mask-size: contain;
+      transform: rotate(180deg);
+    }
+
+    @include anim-fade-left;
+
+    @include bp(mob) {
+      width: 21.04%;
+      top: 61.63%;
+      bottom: unset;
+      left: unset;
+      right: 58.33%;
+    }
+  }
+
+  &__circle {
+    display: none;
+    background-color: getcolor('duck');
+    aspect-ratio: 1;
+    width: 12.5%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 18.75%;
+
+    @include anim-fade-down;
+
+    @include bp(mob) {
+      display: block;
+    }
+  }
+}
+
+.decorator-careers {
+  position: relative;
+  aspect-ratio: 300 / 345;
+
+  @include bp(mob) {
+    aspect-ratio: 1440 / 840;
+  }
+
+  &__image-one,
+  &__image-two,
+  &__image-three {
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image-one {
+    aspect-ratio: 1.67;
+    width: 100%;
+    border-radius: 2.08% / 4%;
+    border-top-right-radius: 15.625% 30%;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include anim-fade-in;
+
+    @include bp(mob) {
+      aspect-ratio: 1.92;
+      width: 66.66%;
+    }
+  }
+
+  &__image-two {
+    aspect-ratio: 1;
+    width: 50%;
+    border-radius: 6.45%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @include anim-fade-up;
+
+    @include bp(mob) {
+      width: 21.53%;
+      top: 63.1%;
+      bottom: unset;
+      left: 33.33%;
+    }
+  }
+
+  &__image-three {
+    display: none;
+    aspect-ratio: 1;
+    width: 31.25%;
+    border-radius: 4.44%;
+    position: absolute;
+    top: 21.19%;
+    left: 0;
+
+    @include anim-fade-in;
+
+    @include bp(mob) {
+      display: block;
+    }
+  }
+
+  &__semi-circle {
+    aspect-ratio: 2.32;
+    width: 45%;
+    position: absolute;
+    top: 56.52%;
+    right: 0;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: getcolor('mint');
+      mask: url('../images/decorators/decorator-semi-circle-solid.svg') center
+        no-repeat;
+      mask-size: contain;
+      transform: rotate(180deg);
+    }
+
+    @include anim-fade-right;
+
+    @include bp(mob) {
+      width: 20.42%;
+      top: 63.1%;
+      left: 56.94%;
+      right: unset;
+    }
+  }
+
+  &__circle {
+    display: none;
+    background-color: getcolor('duck');
+    aspect-ratio: 1;
+    width: 10.28%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 20.97%;
+
+    @include anim-fade-down;
+
+    @include bp(mob) {
+      display: block;
+    }
+  }
+}
+
+.decorator-podcast-hero {
+  position: relative;
+
+  &__container {
+    aspect-ratio: 720 / 585;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    @include bp(mob) {
+      width: 60%;
+    }
+
+    @include bp(lap) {
+      width: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-60.17%);
+    }
+  }
+
+  &__image-left {
+    aspect-ratio: 345 / 460;
+    width: 47.9166%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5.797% / 4.35%;
+    border-top-left-radius: 56.52% 42.39%;
+    border-top-right-radius: 56.52% 42.39%;
+    overflow: hidden;
+
+    @include anim-fade-down;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image-right {
+    aspect-ratio: 345 / 460;
+    width: 47.9166%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 5.797% / 4.35%;
+    overflow: hidden;
+
+    @include anim-fade-up;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__semi-circle-line {
+    background-color: getcolor('slate');
+    mask: url('../images/decorators/decorator-semi-circle-line.svg') center
+      bottom no-repeat;
+    mask-size: contain;
+    aspect-ratio: 2.26;
+    width: 22.22%;
+    position: absolute;
+    top: 4.62%;
+    left: 42.08%;
+    transform: translateY(0) rotate(29.76deg);
+
+    @include anim-left-rotate(
+      $duration: 1s,
+      $delay: 0s,
+      $distance: 2rem,
+      $timing: ease-out,
+      $rotate: 49.76deg
+    );
+  }
+
+  &__semi-circle {
+    background-color: getcolor('duck');
+    mask: url('../images/decorators/decorator-semi-circle-solid.svg') center
+      no-repeat;
+    mask-size: contain;
+    aspect-ratio: 2.32;
+    width: 25.42%;
+    position: absolute;
+    top: 83.76%;
+    left: 22.5%;
+    transform: rotate(180deg);
+
+    @include anim-right-rotate(
+      $duration: 1s,
+      $delay: 0s,
+      $distance: 2rem,
+      $timing: ease-out,
+      $rotate: 180deg
+    );
+  }
+}
+
+.decorator-panel-shapes {
+  position: relative;
+
+  &__container {
+    aspect-ratio: 1.22;
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+
+    @include bp(mob) {
+      width: 31.66%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(15.35%, -35.75%);
+    }
+  }
+
+  &__semi-circle-line {
+    background-color: getcolor('slate');
+    mask: url('../images/decorators/decorator-semi-circle-line.svg') center
+      bottom no-repeat;
+    mask-size: contain;
+    aspect-ratio: 2.26;
+    width: 40.13%;
+    position: absolute;
+    top: 0;
+    left: 20.7%;
+    transform: translateY(0) rotate(11.75deg);
+
+    @include anim-down-rotate(
+      $duration: 1s,
+      $delay: 0s,
+      $distance: 2rem,
+      $timing: ease-out,
+      $rotate: 31.75deg
+    );
+  }
+
+  &__semi-circle {
+    background-color: getcolor('peach-tea');
+    mask: url('../images/decorators/decorator-semi-circle-solid.svg') center
+      no-repeat;
+    mask-size: contain;
+    aspect-ratio: 2.32;
+    width: 45%;
+    position: absolute;
+    top: 19.74%;
+    left: 0;
+    transform: translateX(0) rotate(65.39deg);
+
+    @include anim-right-rotate(
+      $duration: 1s,
+      $delay: 0s,
+      $distance: 2rem,
+      $timing: ease-out,
+      $rotate: 45.39deg
+    );
+  }
+
+  &__circle {
+    background-color: getcolor('mint');
+    aspect-ratio: 1;
+    width: 65.35%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @include anim-fade-right;
+  }
+}
+
+.decorator-hero-wordpress {
+  position: relative;
+
+  &__container {
+    aspect-ratio: 53 / 36;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__circle {
+    background: url('../images/decorators/hero/decorator-hero-wordpress-circle-bg@2x.webp')
+      center no-repeat getcolor('wheat-flour');
+    background-size: cover;
+    aspect-ratio: 1 / 1;
+    width: 68%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+
+    @include anim-fade-right;
+  }
+
+  &__semi-circle {
+    background-color: getcolor('peach-tea');
+    mask: url('../images/decorators/decorator-semi-circle-solid.svg') center
+      bottom no-repeat;
+    mask-size: contain;
+    aspect-ratio: 109 / 48;
+    width: 42%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @include anim-fade-left;
+  }
+
+  &__semi-circle-line {
+    background-color: getcolor('slate');
+    mask: url('../images/decorators/decorator-semi-circle-line.svg') center
+      bottom no-repeat;
+    mask-size: contain;
+    aspect-ratio: 65 / 66;
+    width: 25%;
+    position: absolute;
+    top: 33%;
+    left: 3.8%;
+    transform: translateY(0) rotate(-45deg);
+
+    @include anim-down-rotate(
+      $duration: 1s,
+      $delay: 0s,
+      $distance: 2rem,
+      $timing: ease-out,
+      $rotate: -25deg
+    );
+  }
+}

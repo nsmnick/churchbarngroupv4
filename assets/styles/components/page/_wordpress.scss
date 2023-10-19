@@ -1,0 +1,323 @@
+.wordpress-services {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+
+  @include bp(lap) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &__service {
+    max-width: 42rem;
+    text-align: center;
+    margin-top: 5rem;
+
+    @include bp(lap) {
+      width: 33.33%;
+    }
+
+    &__image {
+      background: url('../images/logo-leap-create.svg') no-repeat center
+        getcolor('slate');
+      background-size: 12rem auto;
+      aspect-ratio: 42 / 26;
+      margin-bottom: 3rem;
+      border-radius: 2rem;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__title {
+      color: getcolor('black');
+      font-size: 2.2rem;
+      font-weight: 200;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+
+      @include bp(lap) {
+        font-size: 2.8rem;
+      }
+    }
+
+    &__description {
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 1.75;
+      margin-bottom: 3rem;
+    }
+
+    &__list {
+      padding-top: 2rem;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        height: 0;
+        width: 100%;
+        max-width: 14rem;
+        border-bottom: 0.2rem solid rgb(getcolorrgb('duck') / 20%);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      h4 {
+        color: getcolor('black');
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          font-size: 1.6rem;
+          font-weight: 300;
+          line-height: 1.75;
+        }
+      }
+    }
+  }
+}
+
+.panel--panel-shapes-wordpress {
+  background: linear-gradient(
+    to bottom,
+    getcolor('wheat-flour') 0%,
+    getcolor('wheat-flour') 50%,
+    transparent 50%,
+    transparent 100%
+  );
+
+  @include bp(mob) {
+    background: getcolor('wheat-flour');
+  }
+
+  .panel {
+    &__container {
+      @include bp(mob) {
+        padding: 14rem 0 0;
+      }
+    }
+  }
+
+  .decorator-panel-shapes {
+    &__container {
+      @include bp(mob) {
+        width: 22.92%;
+        transform: translate(0, -47.46%);
+      }
+    }
+  }
+}
+
+.wordpress-reasons {
+  border-width: 0.1rem 0 0 0.1rem;
+  counter-reset: reason;
+  margin-bottom: 5rem;
+
+  @include bp(lap) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10rem;
+  }
+
+  &,
+  &__reason {
+    border-style: solid;
+    border-color: getcolor('ui-grey');
+  }
+
+  &__reason {
+    color: getcolor('slate');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 4rem 3rem;
+    border-width: 0 0.1rem 0.1rem 0;
+    user-select: none;
+    transition: box-shadow 0.2s linear;
+
+    @include bp(lap) {
+      flex-basis: 50%;
+    }
+
+    @include bp(desk) {
+      flex-basis: 33.33%;
+    }
+
+    @include bp(wide) {
+      flex-basis: 25%;
+    }
+
+    &:hover {
+      box-shadow: 0 0 4rem rgb(getcolorrgb('black') / 15%);
+    }
+
+    &::before {
+      counter-increment: reason;
+      content: counter(reason);
+      background-color: getcolor('duck');
+      color: getcolor('white');
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      box-shadow: 0 0 2rem rgb(getcolorrgb('slate') / 40%);
+      margin-bottom: 3rem;
+      font-family: bely-display;
+      font-size: 5rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    &__icon {
+      background-color: getcolor('wheat-flour');
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1;
+      width: 100%;
+      max-width: 12rem;
+      border-radius: 50%;
+      margin-bottom: 3rem;
+
+      &::before {
+        content: '';
+        display: block;
+        aspect-ratio: 1;
+        width: 54%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+
+    &__title {
+      color: getcolor('black');
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: center;
+      margin: 0 0 1rem;
+    }
+
+    &__description {
+      font-weight: 300;
+      line-height: 1.75;
+      text-align: center;
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.wordpress-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, getcolor('duck') 0%, getcolor('mint') 100%)
+    no-repeat center;
+  background-size: 150%;
+  padding: 8rem 2rem;
+  border-radius: 2rem;
+
+  @include bp(lap) {
+    padding: 8rem;
+  }
+
+  h3 {
+    color: getcolor('black');
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 4rem;
+    text-align: center;
+    margin: 0 0 5rem;
+
+    @include bp(lap) {
+      text-align: left;
+    }
+  }
+}
+
+.wordpress-faq-title {
+  text-align: center;
+}
+
+.wordpress-faq {
+  max-width: 108rem;
+  margin: 0 auto;
+
+  &__item {
+    margin-bottom: 1rem;
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: getcolor('wheat-flour');
+      color: getcolor('black');
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1.5;
+      padding: 3rem 2rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      user-select: none;
+
+      @include bp(lap) {
+        padding: 3rem;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        flex-shrink: 0;
+        width: 2rem;
+        height: 3rem;
+        background: url('../images/icons/icon-plus.svg') no-repeat center;
+        background-size: contain;
+        margin-left: 5rem;
+      }
+    }
+
+    &[open] {
+      .wordpress-faq__item__title::after {
+        background-image: url('../images/icons/icon-minus.svg');
+      }
+    }
+
+    &__answer {
+      @extend .post-content;
+
+      padding: 2rem 1rem 3rem;
+
+      @include bp(lap) {
+        padding: 2rem 3rem 3rem;
+      }
+    }
+  }
+}

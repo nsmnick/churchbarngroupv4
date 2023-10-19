@@ -1,0 +1,69 @@
+.podcast {
+  color: getcolor('slate');
+
+  @include bp(lap) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+  }
+
+  @include bp(desk) {
+    gap: 12rem;
+  }
+
+  &__image {
+    background: url('../images/logo-leap-create.svg') no-repeat center
+      getcolor('slate');
+    background-size: 12rem auto;
+    aspect-ratio: 1.4;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    @include bp(lap) {
+      order: 2;
+      width: 100%;
+      margin-bottom: 0;
+      border-radius: 2rem;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content-wrapper {
+    order: 1;
+    flex-basis: 34%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include bp(desk) {
+      padding: 8rem 0;
+    }
+  }
+
+  &__content {
+    font-size: 1.8rem;
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 6rem;
+  }
+
+  &__excerpt {
+    font-size: 1.8rem;
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 3rem;
+
+    @include bp(desk) {
+      margin-bottom: 5rem;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.careers-list {
+  margin-top: 6rem;
+
+  &__item {
+    background-color: getcolor('white');
+    padding: 3rem 6rem;
+    border-radius: 2rem;
+    user-select: none;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.2s ease-out;
+
+    @include bp(desk) {
+      display: flex;
+      justify-content: space-between;
+      gap: 10rem;
+    }
+
+    &:hover {
+      box-shadow: 0 0.4rem 4rem rgb(getcolorrgb('black') / 15%);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__content {
+      margin-bottom: 3rem;
+
+      @include bp(desk) {
+        margin-bottom: 0;
+      }
+
+      h3 {
+        color: getcolor('black');
+        font-size: 2.6rem;
+        line-height: 1.5;
+        font-weight: 200;
+        margin: 0 0 2rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+        line-height: 1.75;
+        font-weight: 300;
+        margin: 0;
+      }
+    }
+
+    &__cta {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

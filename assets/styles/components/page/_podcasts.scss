@@ -1,0 +1,233 @@
+.podcast-content {
+  @extend .page-content;
+
+  margin-bottom: 5rem;
+
+  @include bp(lap) {
+    width: 42%;
+  }
+
+  @include bp(desk) {
+    columns: unset;
+    gap: unset;
+  }
+}
+
+.featured-podcast {
+  color: getcolor('slate');
+  padding: 8rem 0;
+  border-top: 0.1rem solid getcolor('ui-grey');
+  border-bottom: 0.1rem solid getcolor('ui-grey');
+
+  @include bp(lap) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12rem;
+  }
+
+  &__image {
+    background: url('../images/logo-leap-create.svg') no-repeat center
+      getcolor('slate');
+    background-size: 12rem auto;
+    aspect-ratio: 1.4;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    @include bp(lap) {
+      order: 2;
+      width: 100%;
+      border-radius: 2rem;
+      margin-bottom: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    order: 1;
+    flex-basis: 33.33%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include bp(desk) {
+      padding: 8rem 0;
+    }
+  }
+
+  &__episode {
+    display: flex;
+    align-items: center;
+    color: getcolor('black');
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+
+    @include bp(desk) {
+      margin-bottom: 2rem;
+    }
+
+    &::before {
+      content: '';
+      background-color: getcolor('peach-tea');
+      display: block;
+      width: 1.2rem;
+      height: 0.2rem;
+      margin-right: 0.8rem;
+    }
+  }
+
+  &__heading {
+    color: getcolor('black');
+    font-size: 2rem;
+    font-weight: 200;
+    line-height: 1.5;
+    margin: 0 0 3rem;
+
+    @include bp(desk) {
+      font-size: 4rem;
+      line-height: 1.3;
+    }
+  }
+
+  &__excerpt {
+    font-size: 1.8rem;
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 3rem;
+
+    @include bp(desk) {
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+.podcast-search {
+  &__form {
+    margin-bottom: 9rem;
+
+    &__radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    &__radio {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      label {
+        display: block;
+        background-color: getcolor('white');
+        color: getcolor('slate');
+        font-weight: 300;
+        padding: 0.8rem 1.5rem;
+        border-radius: 0.5rem;
+        transition: background-color 0.2s linear, color 0.2s linear;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      input[type='radio'] {
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:checked + label {
+          background-color: getcolor('slate');
+          color: getcolor('white');
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &__results {
+    @include bp(mob) {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -1.5rem;
+    }
+  }
+
+  &__post {
+    display: block;
+    color: getcolor('slate');
+    text-decoration: none;
+    margin-bottom: 6rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+
+    @include bp(mob) {
+      flex-basis: calc(50% - 3rem);
+      margin: 0 1.5rem 6rem;
+    }
+
+    @include bp(lap) {
+      flex-basis: calc(33.33% - 3rem);
+      margin: 0 1.5rem 8rem;
+    }
+
+    &__image {
+      background: url('../images/logo-leap-create.svg') no-repeat center
+        getcolor('slate');
+      background-size: 12rem auto;
+      aspect-ratio: 1;
+      margin-bottom: 3rem;
+      border-radius: 1rem;
+      overflow: hidden;
+
+      @include bp(lap) {
+        border-radius: 2rem;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__episode {
+      display: flex;
+      align-items: center;
+      color: getcolor('black');
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+
+      &::before {
+        content: '';
+        background-color: getcolor('peach-tea');
+        display: block;
+        width: 1.2rem;
+        height: 0.2rem;
+        margin-right: 0.8rem;
+      }
+    }
+
+    &__heading {
+      color: getcolor('black');
+      font-size: 2rem;
+      font-weight: 200;
+      line-height: 1.5;
+      margin: 0;
+
+      @include bp(desk) {
+        font-size: 2.6rem;
+      }
+    }
+  }
+}

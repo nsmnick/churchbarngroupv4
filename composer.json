@@ -1,0 +1,99 @@
+{
+  "name": "knappster/wordpress-framework",
+  "authors": [
+    {
+      "name": "Carl Knapp",
+      "email": "kn4ppster@gmail.com"
+    }
+  ],
+  "type": "project",
+  "description": "Small boilerplate for Wordpress projects.",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-premium/advanced-custom-fields-pro",
+        "type": "wordpress-plugin",
+        "version": "6.1.4",
+        "dist": {
+          "type": "zip",
+          "url": "./packages/plugins/advanced-custom-fields-pro.zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-premium/gravityforms",
+        "type": "wordpress-plugin",
+        "version": "2.7.2",
+        "dist": {
+          "type": "zip",
+          "url": "./packages/plugins/gravityforms.zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-premium/gravityformshubspot",
+        "type": "wordpress-plugin",
+        "version": "1.9",
+        "dist": {
+          "type": "zip",
+          "url": "./packages/plugins/gravityformshubspot.zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-premium/gravityformsrecaptcha",
+        "type": "wordpress-plugin",
+        "version": "1.1",
+        "dist": {
+          "type": "zip",
+          "url": "./packages/plugins/gravityformsrecaptcha.zip"
+        }
+      }
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "composer/installers": "^1.10",
+    "wpackagist-plugin/classic-editor": "^1.6",
+    "wpackagist-plugin/wordpress-seo": "^20.3",
+    "wpackagist-plugin/safe-svg": "^2.0",
+    "wpackagist-plugin/simple-custom-post-order": "^2.5",
+    "wp-premium/advanced-custom-fields-pro": "^6.1",
+    "wp-premium/gravityforms": "^2.7",
+    "wpackagist-plugin/wp-optimize": "^3.2",
+    "wpackagist-plugin/add-to-any": "^1.8",
+    "wpackagist-plugin/sg-cachepress": "^7.3",
+    "wpackagist-plugin/sg-security": "^1.4",
+    "wp-premium/gravityformsrecaptcha": "^1.1",
+    "wpackagist-plugin/redirection": "^5.3"
+  },
+  "extra": {
+    "installer-paths": {
+      "public/wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ],
+      "public/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  },
+  "require-dev": {
+    "phan/phan": "^5.4"
+  }
+}

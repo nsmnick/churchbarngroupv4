@@ -1,0 +1,77 @@
+.modal {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  &--show {
+    display: flex;
+    animation: modal-fade-in 1s;
+  }
+
+  &__overlay {
+    background-color: rgb(getcolorrgb('slate') / 20%);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  &__container {
+    background-color: getcolor('white');
+    max-width: 72rem;
+    padding: 4rem;
+    position: relative;
+    z-index: 2;
+    overflow: auto;
+
+    @include bp(mob) {
+      border-radius: 2rem;
+      max-height: calc(100vh - 4rem);
+      max-height: calc(100dvh - 4rem);
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 3rem;
+
+    &__close {
+      display: block;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        background: url('../images/icons/icon-close.svg') no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+
+  &__content {
+    h2 {
+      margin: 0 0 3rem;
+      line-height: 1.3;
+    }
+  }
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,97 @@
+/*
+Default font size is 16px.
+Setting font size to 62.5% changes the default to 10px.
+This makes 'rem' conversion from 'px' easy. 16px = 1.6rem.
+*/
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  background-color: getcolor('wheat-flour');
+  color: getcolor('slate');
+  font-family: getfontfamily('main');
+  font-size: 1.6rem;
+  line-height: 1.5;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 100;
+
+  span {
+    font-weight: 300;
+  }
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.3;
+
+  @include bp(desk) {
+    font-size: 5.8rem;
+  }
+}
+
+h2 {
+  font-size: 2.4rem;
+
+  @include bp(desk) {
+    font-size: 4rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+
+  @include bp(desk) {
+    font-size: 2.6rem;
+  }
+}
+
+h4 {
+  /* 1em */
+  font-size: 1.6rem;
+}
+
+h5 {
+  /* 0.8em */
+  font-size: 1.28rem;
+}
+
+h6 {
+  /* 0.7em */
+  font-size: 1.12rem;
+}
+
+p {
+  margin: 0 0 1.5rem;
+}
+
+hr {
+  border: 0;
+  border-bottom: 0.1rem solid rgb(getcolorrgb('duck') / 20%);
+  margin: 5rem 0;
+}
+
+a {
+  color: getcolor('slate');
+}

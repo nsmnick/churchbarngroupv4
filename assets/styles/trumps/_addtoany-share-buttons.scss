@@ -1,0 +1,40 @@
+/*
+  Top grade jank going on here because we have to use a
+  poorly written share button plugin.
+*/
+.addtoany_list {
+  display: flex !important;
+  gap: 2rem;
+
+  a {
+    background-color: getcolor('slate');
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+
+    span {
+      svg {
+        path {
+          transition: fill 0.2s linear;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: getcolor('slate') !important;
+
+      span {
+        opacity: 1 !important;
+
+        svg {
+          path {
+            fill: getcolor('mint') !important;
+          }
+        }
+      }
+    }
+  }
+}
